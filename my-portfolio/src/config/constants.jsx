@@ -5,7 +5,7 @@ import TechnicalWriting from "../assets/technical-writing.png";
 import WebDevelopment from "../assets/front-end-web-development.png";
 import Collaboration from "../assets/collaboration.png";
 import Project1 from "../assets/Twitter.jpg";
-import Project2 from "../assets/TextClassification.jpg";
+import Project2 from "../assets/TextClassification.png";
 import Project3 from "../assets/AiVIdeo.jpg";
 import Project4 from "../assets/SocialMedia.jpg";
 import Github from "../assets/github.jpg";

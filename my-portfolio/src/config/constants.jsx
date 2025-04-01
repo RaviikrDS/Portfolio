@@ -4,55 +4,56 @@ import DataVisualization from "../assets/data-visualization.png";
 import TechnicalWriting from "../assets/technical-writing.png";
 import WebDevelopment from "../assets/front-end-web-development.png";
 import Collaboration from "../assets/collaboration.png";
-import Cyclist from "../assets/cyclistic.png";
+import Project1 from "../assets/Twitter.jpg";
+import Project2 from "../assets/TextClassification.png";
+import Project3 from "../assets/AiVIdeo.jpg";
+import Project4 from "../assets/SocialMedia.jpg";
 import Github from "../assets/github.jpg";
 import Medium from "../assets/medium.png";
 
 
 const ABOUT = [
-    "I have a background in Mechanical Engineering and my journey into data science and machine learning is a captivating evolution. I've always been drawn to the world of problem-solving, and data provides the perfect canvas for my curious mind to explore and innovate.",
-    "What excites me most about this field is its constant evolution, dynamic challenges and the continuous learning it demands. I firmly believe in the transformative power of data to reshape industries and drive innovation, and I'm here to be a part of that transformation",
-    "What excites me most about this field is its constant evolution, dynamic challenges and the continuous learning it demands. I firmly believe in the transformative power of data to reshape industries and drive innovation, and I'm here to be a part of that transformation"
+    "Data tells a story, and I make sure it’s heard. As a Data Scientist, I specialize in transforming raw information into powerful insights, bridging the gap between data and decision-making. From building scalable data pipelines to developing and deploying cutting-edge AI models, I have hands-on experience in NLP-based text classification, Deep Learning, and Machine Learning. Proficient in Python, SQL, and frameworks like TensorFlow and Flask, I craft efficient, production-ready solutions powered by AWS SageMaker and Docker. But data science is more than just models—it’s about impact. With strong problem-solving skills, storytelling with data, and a knack for compelling presentations, I turn complex analytics into business strategies. Whether it's leading projects, mentoring teams, or delivering AI-driven solutions, I thrive at the intersection of technology and business, making data-driven innovation a reality."
 ];
 
 const PROFICIENCIES = {
-    title: "I can optimize your data for better results, informed decisions and cost savings. My proficiency in technical tools like SQL, Python, HTML, CSS, Power BI and Tableau, combined with strong soft skills, enables me to deliver impactful data solutions.",
+    title: "I specialize in end-to-end Data Science solutions, from building scalable data pipelines to deploying AI-driven applications. My expertise spans Machine Learning, NLP, Cloud Deployment, Data Visualization, and Leadership, enabling impactful, data-driven decision-making.",
     details: [
         {
             id: 1,
-            title: "Data Analysis",
-            image: <img src={DataAnalysis} alt="Data Analysis" className="icon" />,
-            description:"Uncover hidden insights and patterns within your data to identify trends, anomalies and opportunities for data-driven decision-making.",
+            title: "Machine Learning & Deep Learning",
+            image: <img src={DataAnalysis} alt="Machine Learning & Deep Learning" className="icon" />,
+            description:"Transforming data into intelligence through predictive modeling and AI-driven solutions. With expertise in Machine Learning, Deep Learning, and NLP, I develop intelligent models for text classification, recommendation systems, and more. I leverage TensorFlow, SciKit-Learn, and AWS SageMaker to build and deploy scalable AI applications.",
         },
         {
             id: 2,
-            title: "Data Analysis",
-            image: <img src={DataAnalytics} alt="Data Analytics" className="icon" />,
-            description: "Harness the power of advanced analytics, including predictive models and machine learning solutions to forecast outcomes, optimize processes and gain a competitive edge.",
+            title: "NLP & LLM-Based Applications",
+            image: <img src={DataAnalytics} alt="NLP & LLM-Based Applications" className="icon" />,
+            description: "I specialize in Natural Language Processing (NLP) and Large Language Models (LLMs) to extract insights from text, automate processes, and build AI-driven chatbots, sentiment analysis tools, and document classifiers. My work integrates Deep Learning, Transformers, and cutting-edge AI techniques.",
         },
         {
             id: 3,
-            title: "Data Visualization",
-            image: <img src={DataVisualization} alt="Data Visualization" className="icon" />,
-            description: "Transform complex data into clear and compelling visual narratives. Create custom dashboards and reports for enhanced data communication and understanding.",
+            title: "Data Engineering & Pipelines",
+            image: <img src={DataVisualization} alt="Data Engineering & Pipelines" className="icon" />,
+            description: "Building robust data pipelines for scalable and efficient AI workflows. From data collection to model deployment, I design end-to-end data pipelines using Python, SQL, Pandas, and AWS. My expertise ensures clean, structured, and optimized data processing for real-time and batch applications.",
         },
         {
             id: 4,
-            title: "Technical Writing",
-            image: <img src={TechnicalWriting} alt="Technical Writing" className="icon" />,
-            description: "Translate intricate technical concepts into clear and concise documentation. From reports to comprehensive materials, I ensure your data projects are well-documented and readily accessible.",
+            title: "AWS Cloud & Deployment",
+            image: <img src={TechnicalWriting} alt="AWS Cloud & Deployment" className="icon" />,
+            description: "Deploying AI solutions with scalability and efficiency. I have hands-on experience in deploying ML models using Flask APIs, Docker containers, and AWS SageMaker. I ensure models are production-ready, scalable, and optimized for performance in cloud-based environments.",
         }, 
         {
             id: 5,
-            title: "Web Development",
-            image: <img src={WebDevelopment} alt="Web Development" className="icon" />,
-            description: "Craft intuitive web interfaces that deliver information in an accessible format. Design and build data-driven web solutions, seamlessly blending functionality and aesthetics to present data solutions that engage and inform.",
+            title: "Data Visualization & Business Storytelling",
+            image: <img src={WebDevelopment} alt="Data Visualization & Business Storytelling" className="icon" />,
+            description: "Turning raw data into compelling narratives for informed decision-making. I use Matplotlib, Seaborn, and Power BI to create impactful visualizations that communicate data-driven insights. My storytelling approach helps businesses make strategic decisions backed by clear and actionable analytics.",
         }, 
         {
             id: 6,
-            title: "Data Collaboration",
-            image: <img src={Collaboration} alt="Data Collaboration" className="icon" />,
-            description: "Collaborate seamlessly with your team to integrate data solutions into your business processes. Whether it's short-term projects or ongoing data-driven initiatives, I'm here to support your success.",
+            title: "Leadership, Collaboration & Mentorship",
+            image: <img src={Collaboration} alt="Leadership, Collaboration & Mentorship" className="icon" />,
+            description: "Driving innovation through teamwork, knowledge sharing, and leadership. Beyond technical skills, I excel in leading projects, mentoring aspiring Data Scientists, and collaborating across teams. With strong presentation and problem-solving abilities, I bridge the gap between technical complexity and business strategy.",
         }
     ]
 }
@@ -60,27 +61,27 @@ const PROFICIENCIES = {
 const PROJECTS = [
     {
         id: 1,
-        title: "Project 1",
-        description: "A comprehensive analysis of Cyclistic Bike-Share program, featuring Exploratory Data Analysis (EDA), A/B Testing, SARIMA Time Series Forecasting and interactive Tableau dashboards to uncover user behavior, trends and marketing strategies for growth.",
-        image: <img src={Cyclist} alt="Project 1" className="project_img" />
+        title: "Twitter Sentiments Analysis",
+        description: "Uncovering public sentiment through AI-driven text analysis. This project analyzes tweets to determine sentiment—positive, negative, or neutral—using Natural Language Processing (NLP) and Machine Learning. It involves data preprocessing, text vectorization, and classification using Deep Learning models. The system is trained on a labeled dataset and deployed via Flask and AWS, making it scalable for real-time analysis. This solution helps brands and businesses gain insights into customer opinions and trends.",
+        image: <img src={Project1} alt="Twitter Sentiments Analysis" className="project_img" />
     },
     {
         id: 2,
-        title: "Project 2",
-        description: "A comprehensive analysis of Cyclistic Bike-Share program, featuring Exploratory Data Analysis (EDA), A/B Testing, SARIMA Time Series Forecasting and interactive Tableau dashboards to uncover user behavior, trends and marketing strategies for growth.",
-        image: <img src={Cyclist} alt="Project 1" className="project_img" />
+        title: "Text Classification",
+        description: "This project classifies text into predefined categories using Natural Language Processing (NLP) and Deep Learning techniques. It involves data preprocessing, tokenization, and feature extraction using libraries like TensorFlow and SciKit-Learn. A neural network-based model is trained to accurately categorize text, making it applicable for spam detection, sentiment analysis, and document classification. The model is deployed using Flask and AWS, ensuring real-time and scalable predictions.",
+        image: <img src={Project2} alt="Text Classification" className="project_img" />
     },
     {
         id: 3,
-        title: "Project 3",
-        description: "A comprehensive analysis of Cyclistic Bike-Share program, featuring Exploratory Data Analysis (EDA), A/B Testing, SARIMA Time Series Forecasting and interactive Tableau dashboards to uncover user behavior, trends and marketing strategies for growth.",
-        image: <img src={Cyclist} alt="Project 3" className="project_img" />
+        title: "AI Video Creator",
+        description: "This project leverages Generative AI and Deep Learning to create videos from text-based inputs. It integrates Natural Language Processing (NLP) and Computer Vision to generate relevant visuals, animations, and voiceovers. Using LLMs, AI-powered video synthesis, and AWS cloud services, the system converts scripts into engaging video content. This solution is ideal for content creators, businesses, and automated storytelling, enabling scalable and high-quality video production with minimal manual effort.",
+        image: <img src={Project3} alt="AI Video Creator" className="project_img" />
     },
     {
         id: 4,
-        title: "Project 4",
-        description: "A comprehensive analysis of Cyclistic Bike-Share program, featuring Exploratory Data Analysis (EDA), A/B Testing, SARIMA Time Series Forecasting and interactive Tableau dashboards to uncover user behavior, trends and marketing strategies for growth.",
-        image: <img src={Cyclist} alt="Project 4" className="project_img" />
+        title: "Automate Social Media Content Uploader",
+        description: "Seamlessly scheduling and uploading content with AI-powered automation. This project automates the process of uploading videos, images, and captions to social media platforms like Instagram, Twitter, and LinkedIn. Using Python, Selenium, and API integrations, it streamlines content scheduling, hashtag management, and post customization. The system is configurable via a JSON-based setup, allowing users to enable or disable features like thumbnail usage, captions, and logging. Designed for content creators and businesses, this tool enhances efficiency by eliminating manual uploads and ensuring consistent online engagement.",
+        image: <img src={Project4} alt="Automate Social Media Content Uploader" className="project_img" />
     },
 ];
 
@@ -88,23 +89,23 @@ const OTHER_PLATFORMS = [
     {
         id: 1,
         title: "GitHub",
-        description:"All things code",
+        description:"Explore my projects, experiments, and open-source contributions.",
         image: <img src={Github} alt="GitHub" className="project_img" />
 
     },
     {
         id: 2,
         title: "Medium",
-        description:"Catch my thoughts and insights on data",
+        description:"Deep dive into my insights on Data Science, AI, and beyond.",
         image: <img src={Medium} alt="Medium" className="project_img" />
     }
 ];
 
 const CONTACTINFO=[
-"Navtollia, Mathurapur, Khagaria",
-        "Bihar, India",
-        "845401",
-        "4z2Ml@example.com",
+"Rajiv Gandhi Infotech Park, Maan Phase 3, Pune",
+        "Maharashtra, India",
+        "411057",
+        "iamravikumaar@gmail.com",
 ];
 
 

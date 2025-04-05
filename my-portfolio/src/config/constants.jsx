@@ -10,6 +10,7 @@ import Project3 from "../assets/AiVIdeo.jpg";
 import Project4 from "../assets/SocialMedia.jpg";
 import Github from "../assets/github.jpg";
 import Medium from "../assets/medium.png";
+import LinkedIn from "../assets/linkedin.png";  // Added LinkedIn image import
 
 
 const ABOUT = [
@@ -64,24 +65,28 @@ const PROJECTS = [
         title: "Twitter Sentiments Analysis",
         description: "Uncovering public sentiment through AI-driven text analysis. This project analyzes tweets to determine sentiment—positive, negative, or neutral—using Natural Language Processing (NLP) and Machine Learning. It involves data preprocessing, text vectorization, and classification using Deep Learning models. The system is trained on a labeled dataset and deployed via Flask and AWS, making it scalable for real-time analysis. This solution helps brands and businesses gain insights into customer opinions and trends.",
         image: <img src={Project1} alt="Twitter Sentiments Analysis" className="project_img" />
+        
     },
     {
         id: 2,
         title: "Text Classification",
         description: "This project classifies text into predefined categories using Natural Language Processing (NLP) and Deep Learning techniques. It involves data preprocessing, tokenization, and feature extraction using libraries like TensorFlow and SciKit-Learn. A neural network-based model is trained to accurately categorize text, making it applicable for spam detection, sentiment analysis, and document classification. The model is deployed using Flask and AWS, ensuring real-time and scalable predictions.",
         image: <img src={Project2} alt="Text Classification" className="project_img" />
+        
     },
     {
         id: 3,
         title: "AI Video Creator",
         description: "This project leverages Generative AI and Deep Learning to create videos from text-based inputs. It integrates Natural Language Processing (NLP) and Computer Vision to generate relevant visuals, animations, and voiceovers. Using LLMs, AI-powered video synthesis, and AWS cloud services, the system converts scripts into engaging video content. This solution is ideal for content creators, businesses, and automated storytelling, enabling scalable and high-quality video production with minimal manual effort.",
         image: <img src={Project3} alt="AI Video Creator" className="project_img" />
+        
     },
     {
         id: 4,
         title: "Automate Social Media Content Uploader",
         description: "Seamlessly scheduling and uploading content with AI-powered automation. This project automates the process of uploading videos, images, and captions to social media platforms like Instagram, Twitter, and LinkedIn. Using Python, Selenium, and API integrations, it streamlines content scheduling, hashtag management, and post customization. The system is configurable via a JSON-based setup, allowing users to enable or disable features like thumbnail usage, captions, and logging. Designed for content creators and businesses, this tool enhances efficiency by eliminating manual uploads and ensuring consistent online engagement.",
         image: <img src={Project4} alt="Automate Social Media Content Uploader" className="project_img" />
+        
     },
 ];
 
@@ -89,15 +94,35 @@ const OTHER_PLATFORMS = [
     {
         id: 1,
         title: "GitHub",
-        description:"Explore my projects, experiments, and open-source contributions.",
-        image: <img src={Github} alt="GitHub" className="project_img" />
-
+        description: "Explore my projects, experiments, and open-source contributions.",
+        link: "https://github.com/imrk-1111",
+        image: (
+            <a href="https://github.com/imrk-1111" target="_blank" rel="noopener noreferrer">
+                <img src={Github} alt="GitHub" className="project_img" />
+            </a>
+        )
     },
     {
         id: 2,
         title: "Medium",
-        description:"Deep dive into my insights on Data Science, AI, and beyond.",
-        image: <img src={Medium} alt="Medium" className="project_img" />
+        description: "Deep dive into my insights on Data Science, AI, and beyond.",
+        link: "https://medium.com/@ravikumar_83882",
+        image: (
+            <a href="https://medium.com/@ravikumar_83882" target="_blank" rel="noopener noreferrer">
+                <img src={Medium} alt="Medium" className="project_img" />
+            </a>
+        )
+    },
+    {
+        id: 3,
+        title: "LinkedIn",
+        description: "Connect with me for professional networking and career updates.",
+        link: "https://www.linkedin.com/in/ravi-kumar-1287461a0/",
+        image: (
+            <a href="https://www.linkedin.com/in/ravi-kumar-1287461a0/" target="_blank" rel="noopener noreferrer">
+                <img src={LinkedIn} alt="LinkedIn" className="project_img" />
+            </a>
+        )
     }
 ];
 

@@ -1,12 +1,40 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import { CONTACTINFO } from "../config/constants";
 import Button from '@mui/material/Button';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+  const contactRef = useRef(null);
+
+  useGSAP(()=>{
+
+    const contactContainer = contactRef.current;
+    const heading = contactRef.current.querySelector('.section_heading');
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: contactContainer,
+            start: "top 80%",
+            end: "bottom 70%",
+            toggleActions: "play none none none",
+            // markers: true,
+        }
+    });
+
+    tl.from(heading, {
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+    });
+  })
+
   const [contactInfo, setContactInfo] = useState({
     name: "",
     email: "",
@@ -20,7 +48,7 @@ const Projects = () => {
     });
   };
   return (
-    <Box as="section" id="contacts">
+    <Box ref={contactRef} as="section" id="contacts">
       {/* <Typography variant="caption" className="section_text_p1">Browse Through My</Typography> */}
       <Typography variant="h3" className="section_heading">
         Contact Me

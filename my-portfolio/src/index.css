@@ -3,6 +3,9 @@
 
 * {
   font-family: "Poppins", sans-serif !important;
+  scroll-behavior: smooth;
+  
+  transition: scroll-behavior 0.3s ease-in-out;
 }
 :root {
   font-family: "Poppins", sans-serif !important;
@@ -73,6 +76,9 @@ button:focus-visible {
   }
 } */
 
+.header-link-container {
+  width: 71%;
+}
 .section_text_p1 {
   text-align: center;
   color: #555;
@@ -141,10 +147,11 @@ section {
 
 #profile {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  height: 85vh !important;
+  flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+      height: 85vh !important;
 }
 
 .profile-pic-container {
@@ -160,7 +167,7 @@ section {
   width: 100%;
   border-radius: 50%;
   overflow: hidden !important;
-  background-color: white !important;
+  background-color: #F4F4F4 !important;
 }
 
 .profile-pic-img {
@@ -407,4 +414,224 @@ footer {
 
 footer p {
   color: #555 !important;
+}
+
+.sidebar-close-btn {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Medium screens (md): tablets, typically 900px and down */
+@media (max-width: 1200px) {
+  #profile {
+    flex-direction: column;
+    gap: 0rem;
+    height: 83vh !important;
+    /* margin: 0 5%; */
+  }
+
+  .profile-pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+
+  /* .details_container {
+    display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        gap: 3.5rem;
+        margin-top: 4rem !important;
+  } */
+
+  .article_container article {
+    max-width: 300px;
+    text-align: center;
+  }
+
+
+  #about {
+    padding: 0 0;
+    text-align: center;
+  }
+
+  section {
+    margin: 0 5% !important;
+  }
+
+  #other-platforms .subdetail_container {
+    max-width: 300px !important;
+    gap:2.5rem;
+}
+
+#other-platforms .details_container {
+  justify-content: center !important;
+}
+
+/* .subdetail_container {
+  padding: 1.5rem;
+  max-width: 300px;
+} */
+
+#projects .subdetail_container {
+  padding: 1rem;
+  max-width: 320px;
+  gap:2.5rem;
+}
+  
+}
+
+/* Small screens (sm): phones, typically 600px and down */
+@media (max-width: 768px) {
+
+  .header-link-container {
+    width: 100%;
+  }
+
+  #profile {
+    flex-direction: column;
+    gap: 0rem;
+    height: 72vh !important;
+    /* margin: 0 5%; */
+  }
+
+  .profile-pic-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 2rem;
+  }
+
+  .profile-gretting-text {
+    font-size: 12.8px !important;
+  }
+
+  .profile-gretting-name {
+    font-size: 1.6rem !important;
+  }
+
+  .profile-gretting-text-2 {
+    font-size: 1rem !important;
+  }
+
+  #about {
+    padding:0 0;
+    text-align: center;
+  }
+
+  section {
+    margin: 0 5% !important;
+  }
+
+  .section_text_p1 {
+    font-size: 0.8rem !important;
+  }
+
+  .section_heading {
+    font-size: 1.6rem !important;
+    padding: 5px 0 !important;
+  }
+
+  .text-container {
+    margin-top: 2rem !important;
+  }
+  .text-container p {
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .details_container {
+    display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        gap: 2.5rem;
+        margin-top: 0rem !important;
+  }
+  
+  .subdetail_container {
+    padding: 1.5rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .article_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 0;
+  }
+  
+  .article_container article {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  article h3 {
+    font-size: 1rem !important;
+  }
+
+  article p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+
+  #other-platforms .subdetail_container {
+    max-width: 250px !important;
+    gap:1.5rem;
+}
+
+#other-platforms .details_container {
+  justify-content: center !important;
+}
+
+#projects .subdetail_container {
+  padding: 1.5rem;
+  max-width: 250px;
+  gap:1.5rem;
+}
+
+.subdetail_container h3 {
+  font-size: 1rem !important;
+}
+
+.subdetail_container p {
+  font-size: 0.9rem !important;
+}
+
+.view-project-btn {
+  padding: 0.8rem 1rem;
+  font-size: 0.8rem;
+}
+.nav-link {
+  font-size: 20px !important;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info h3 {
+  font-size: 1rem !important;
+  text-align: center !important;
+}
+
+.contact-info p {
+  font-size: 0.9rem !important;
+  text-align: center !important;
+}
+
+.contact-card .view-project-btn {
+  width: 100% !important;
+}
+
+.header-link-container img {
+  height: 25px !important;
+}
+
 }

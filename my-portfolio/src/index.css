@@ -171,10 +171,10 @@ section {
 }
 
 .profile-pic-img {
-  padding-top: 70px;
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: top center; /* Ensures the image stays aligned to the top */
 }
 
 .profile-info {
@@ -272,16 +272,16 @@ article .icon {
   display: flex;
       flex-wrap: wrap;
       justify-content:space-around;
-      gap: 3.5rem;
+      gap: 5rem;
       margin-top: 4rem !important;
 }
 
 .subdetail_container {
   background-color: white !important;
   border: 1px solid #ddd !important;
-  border-radius: 5px !important;
+  border-radius: 1px !important;
   padding: 1.5rem;
-  max-width: 350px;
+  max-width: 490px;
   text-align: left;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out !important;
@@ -310,7 +310,7 @@ article .icon {
 }
 
 .btn_container {
-  margin-top: 1.5rem;
+  margin-top: .5rem;
   text-align: center;
 }
 
@@ -320,7 +320,7 @@ article .icon {
   color: white;
   padding: 1rem 1rem;
   font-weight: 600;
-  border-radius: 2rem;
+  border-radius: 4rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -339,18 +339,32 @@ article .icon {
   padding: 4rem 0;
   text-align: center;
 }
+
 #other-platforms .details_container {
-      justify-content: center;
+  display: flex; /* Use flex to align items horizontally */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
+  gap: 4rem; /* Add some space between icons */
+  flex-wrap: wrap; /* Wrap items if they overflow */
 }
 
 #other-platforms .subdetail_container {
-  max-width: 340px !important;
+  display: flex; /* Make each card flexible */
+  flex-direction: column; /* Align content vertically inside the card */
+  max-width: 310px; /* Reduce size for smaller icons */
+  padding: 1rem;
+}
+
+#other-platforms .platform-image {
+  width: 40px; /* Adjust image size */
+  height: 50px;
+  object-fit: contain; /* Ensure the image keeps its aspect ratio */
+  margin-bottom: 0.5rem; /* Space below the image */
 }
 
 .text-center {
   text-align: center !important;
 }
-
 /* contacts */
 #contacts {
   padding: 4rem 0;

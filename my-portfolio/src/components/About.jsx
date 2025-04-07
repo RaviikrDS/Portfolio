@@ -51,7 +51,7 @@ const About = () => {
 
   return (
     <Box ref={aboutRef} as="section" id="about">
-      <Typography variant="caption" className="section_text_p1">Get To Know More</Typography>
+      <Typography variant="caption" className="section_text_p1">A glimpse into my expertise and passion for Innovation</Typography>
       <Typography variant="h3" className="section_heading">About Me</Typography>
       <Box mt={4} className="text-container">
          { ABOUT?.length > 0 && ABOUT.map((item, index) => (

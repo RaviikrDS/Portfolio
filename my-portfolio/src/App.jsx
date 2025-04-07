@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import "./App.css";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -10,17 +10,27 @@ import Projects from "./components/Projects.jsx";
 import OtherPlatform from "./components/OtherPlatform.jsx";
 import Contacts from "./components/Contacts.jsx";
 
+import gsap from 'gsap';
+
 function App() {
+
+  const timeline = gsap.timeline();
+
+  useLayoutEffect(() => {
+    // Timeline plays automatically in order
+    // You can also add delay here if needed
+  }, []);
+
   return (
     <>
-      <Header />
+      <Header timeline={timeline} />
       <Box
         as="main"
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         className="main"
       >
-        <Profile />
-        <About />
+        <Profile timeline={timeline}/>
+        <About timeline={timeline} />
         <Proficiencies />
         <Projects />
         <OtherPlatform />

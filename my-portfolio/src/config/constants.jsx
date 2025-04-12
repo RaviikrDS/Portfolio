@@ -95,9 +95,9 @@ const OTHER_PLATFORMS = [
         id: 1,
         title: "GitHub",
         description: "Explore my projects, experiments, and open-source contributions.",
-        link: "https://github.com/imrk-1111",
+        link: "https://github.com/RaviikrDS",
         image: (
-            <a href="https://github.com/imrk-1111" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/RaviikrDS" target="_blank" rel="noopener noreferrer">
                 <img src={Github} alt="GitHub" className="project_img" />
             </a>
         )
@@ -106,9 +106,9 @@ const OTHER_PLATFORMS = [
         id: 2,
         title: "Medium",
         description: "Deep dive into my insights on Data Science, AI, and beyond.",
-        link: "https://medium.com/@ravikumar_83882",
+        link: "https://medium.com/@ravikumaarDS",
         image: (
-            <a href="https://medium.com/@ravikumar_83882" target="_blank" rel="noopener noreferrer">
+            <a href="https://medium.com/@ravikumaarDS" target="_blank" rel="noopener noreferrer">
                 <img src={Medium} alt="Medium" className="project_img" />
             </a>
         )
@@ -117,9 +117,9 @@ const OTHER_PLATFORMS = [
         id: 3,
         title: "LinkedIn",
         description: "Connect with me for professional networking and career updates.",
-        link: "https://www.linkedin.com/in/ravi-kumar-1287461a0/",
+        link: "https://www.linkedin.com/in/raviikrds/",
         image: (
-            <a href="https://www.linkedin.com/in/ravi-kumar-1287461a0/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/raviikrds/" target="_blank" rel="noopener noreferrer">
                 <img src={LinkedIn} alt="LinkedIn" className="project_img" />
             </a>
         )
@@ -130,7 +130,7 @@ const CONTACTINFO=[
 "Rajiv Gandhi Infotech Park, Maan Phase 3, Pune",
         "Maharashtra, India",
         "411057",
-        "iamravikumaar@gmail.com",
+        "raviikrds@gmail.com",
 ];
 
 

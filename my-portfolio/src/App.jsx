@@ -7,6 +7,7 @@ import Profile from "./components/Profile.jsx";
 import About from "./components/About.jsx";
 import Proficiencies from "./components/Proficiencies.jsx";
 import Projects from "./components/Projects.jsx";
+import Certifications from "./components/Certifications.jsx";
 import OtherPlatform from "./components/OtherPlatform.jsx";
 import Contacts from "./components/Contacts.jsx";
 
@@ -33,6 +34,7 @@ function App() {
         <About timeline={timeline} />
         <Proficiencies />
         <Projects />
+        <Certifications />
         <OtherPlatform />
         <Contacts />
         <Box as="footer">

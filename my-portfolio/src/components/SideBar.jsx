@@ -38,6 +38,7 @@ export default function SwipeableTemporaryDrawer({ showSidePanel, setShowSidePan
         { label: "About", path: "/#about" },
         { label: "Proficiencies", path: "/#proficiencies" },
         { label: "Projects", path: "/#projects" },
+        { label: "Certifications", path: "/#certifications" },
         { label: "Other Platforms", path: "/#other-platforms" },
         { label: "Contact", path: "/#contacts" },
       ].map((item) => (

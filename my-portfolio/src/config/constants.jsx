@@ -162,32 +162,32 @@ const PROJECTS = [
     },
 ];
 
-const CERTIFICATES = [
+const CERTIFICATIONS = [
   {
     id: 1,
     title: "Python for Data Science – IBM",
-    description: "Fundamentals of Python, data wrangling and analysis.",
+    platform: "Coursera",
     link: "https://coursera.org/verify/your-cert-id-1",
     image: CourseraLogo,
   },
   {
     id: 2,
     title: "Deep Learning Specialization – Andrew Ng",
-    description: "Neural networks, CNNs, RNNs, and practical DL strategies.",
+    platform: "Databricks",
     link: "https://coursera.org/verify/your-cert-id-2",
     image: DatabricksLogo,
   },
   {
     id: 3,
     title: "Machine Learning – Google Cloud",
-    description: "Applied ML techniques using Google Cloud tools.",
+    platform: "Havard Learnings",
     link: "https://coursera.org/verify/your-cert-id-3",
     image: LeadersLogo,
   },
   {
     id: 4,
     title: "Complete Python Bootcamp – Udemy",
-    description: "Hands-on Python course covering basics to advanced topics.",
+    platform: "Coursera",
     link: "https://udemy.com/certificate/your-cert-id-4",
     image: ComputerVisionLogo,
   },
@@ -241,7 +241,7 @@ export {
     ABOUT,
     PROFICIENCIES,
     PROJECTS,
-    // CERTIFICATIONS,
+    CERTIFICATIONS,
     OTHER_PLATFORMS,
     CONTACTINFO
 }

@@ -1,2 +1,6 @@
 node_modules
 RAVI_KUMAR_RESUME_old.pdf
+backend/venv/
+backend/.env
+.env
+my-portfolio/backend/.env

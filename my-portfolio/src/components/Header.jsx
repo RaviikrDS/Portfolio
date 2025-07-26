@@ -39,6 +39,7 @@ const Header = ({timeline}) => {
                  <Link href="#about" className="nav-link">About</Link>
                  <Link href="#proficiencies" className="nav-link">Proficiencies</Link>
                  <Link href="#projects" className="nav-link">Projects</Link>  
+                 <Link href="#certifications" className="nav-link">Certifications</Link>  
                  <Link href="#other-platforms" className="nav-link">Other Platforms</Link>  
                  <Link href="#contacts" className="nav-link">Contact</Link>  
              </Box>

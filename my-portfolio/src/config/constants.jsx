@@ -12,52 +12,124 @@ import Github from "../assets/github.jpg";
 import Medium from "../assets/medium.png";
 import LinkedIn from "../assets/linkedin.png";  // Added LinkedIn image import
 
+import CourseraLogo from "../assets/certificates/Crash_Course_on_Python.png";
+import DatabricksLogo from "../assets/certificates/Databricks_Fundamentsals.png";
+import LeadersLogo from "../assets/certificates/Emerging_Leadership_Program.png";
+import ComputerVisionLogo from "../assets/certificates/Introduction_to_Computer_Vision_with_TensorFlow.png";
+
 
 const ABOUT = [
-    "Data tells a story, and I make sure it’s heard. As a Data Scientist, I specialize in transforming raw information into powerful insights, bridging the gap between data and decision-making. From building scalable data pipelines to developing and deploying cutting-edge AI models, I have hands-on experience in NLP-based text classification, Deep Learning, and Machine Learning. Proficient in Python, SQL, and frameworks like TensorFlow and Flask, I craft efficient, production-ready solutions powered by AWS SageMaker and Docker. But data science is more than just models—it’s about impact. With strong problem-solving skills, storytelling with data, and a knack for compelling presentations, I turn complex analytics into business strategies. Whether it's leading projects, mentoring teams, or delivering AI-driven solutions, I thrive at the intersection of technology and business, making data-driven innovation a reality."
+    "Building scalable solutions with AI, Machine Learning, NLP, Generative AI, and Agentic AI to solve complex real-world business challenges, optimize decision-making, and drive meaningful impact at scale."
 ];
 
 const PROFICIENCIES = {
-    title: "I specialize in end-to-end Data Science solutions, from building scalable data pipelines to deploying AI-driven applications. My expertise spans Machine Learning, NLP, Cloud Deployment, Data Visualization, and Leadership, enabling impactful, data-driven decision-making.",
-    details: [
-        {
-            id: 1,
-            title: "Machine Learning & Deep Learning",
-            image: <img src={DataAnalysis} alt="Machine Learning & Deep Learning" className="icon" />,
-            description:"Transforming data into intelligence through predictive modeling and AI-driven solutions. With expertise in Machine Learning, Deep Learning, and NLP, I develop intelligent models for text classification, recommendation systems, and more. I leverage TensorFlow, SciKit-Learn, and AWS SageMaker to build and deploy scalable AI applications.",
-        },
-        {
-            id: 2,
-            title: "NLP & LLM-Based Applications",
-            image: <img src={DataAnalytics} alt="NLP & LLM-Based Applications" className="icon" />,
-            description: "I specialize in Natural Language Processing (NLP) and Large Language Models (LLMs) to extract insights from text, automate processes, and build AI-driven chatbots, sentiment analysis tools, and document classifiers. My work integrates Deep Learning, Transformers, and cutting-edge AI techniques.",
-        },
-        {
-            id: 3,
-            title: "Data Engineering & Pipelines",
-            image: <img src={DataVisualization} alt="Data Engineering & Pipelines" className="icon" />,
-            description: "Building robust data pipelines for scalable and efficient AI workflows. From data collection to model deployment, I design end-to-end data pipelines using Python, SQL, Pandas, and AWS. My expertise ensures clean, structured, and optimized data processing for real-time and batch applications.",
-        },
-        {
-            id: 4,
-            title: "AWS Cloud & Deployment",
-            image: <img src={TechnicalWriting} alt="AWS Cloud & Deployment" className="icon" />,
-            description: "Deploying AI solutions with scalability and efficiency. I have hands-on experience in deploying ML models using Flask APIs, Docker containers, and AWS SageMaker. I ensure models are production-ready, scalable, and optimized for performance in cloud-based environments.",
-        }, 
-        {
-            id: 5,
-            title: "Data Visualization & Business Storytelling",
-            image: <img src={WebDevelopment} alt="Data Visualization & Business Storytelling" className="icon" />,
-            description: "Turning raw data into compelling narratives for informed decision-making. I use Matplotlib, Seaborn, and Power BI to create impactful visualizations that communicate data-driven insights. My storytelling approach helps businesses make strategic decisions backed by clear and actionable analytics.",
-        }, 
-        {
-            id: 6,
-            title: "Leadership, Collaboration & Mentorship",
-            image: <img src={Collaboration} alt="Leadership, Collaboration & Mentorship" className="icon" />,
-            description: "Driving innovation through teamwork, knowledge sharing, and leadership. Beyond technical skills, I excel in leading projects, mentoring aspiring Data Scientists, and collaborating across teams. With strong presentation and problem-solving abilities, I bridge the gap between technical complexity and business strategy.",
-        }
-    ]
-}
+  title:
+    "Designing and delivering end-to-end AI solutions by integrating Machine Learning, NLP, Generative AI, and Agentic AI with robust engineering and system design practices. Experienced in building scalable applications deployed across cloud platforms, with well-structured backend services and intuitive frontend interfaces—ensuring intelligent, reliable, and impactful systems at scale.",
+  details: [
+    {
+      id: 1,
+      title: "AI, ML & GenAI",
+      image: <img src={DataAnalysis} alt="AI/ML" className="icon" />,
+      description: (
+        <ul>
+          <li>Model Development: ML & Deep Learning</li>
+          <li>Natural Language Processing</li>
+          <li>GenAI (LLMs, Prompt Engineering)</li>
+          <li>Retrieval-Augmented Generation(RAG)</li>
+          <li>Agentic AI Systems</li>
+        </ul>
+      ),
+    },
+    {
+      id: 2,
+      title: "Data Engineering & Pipelines",
+      image: <img src={DataAnalytics} alt="Data Engineering" className="icon" />,
+      description: (
+        <ul>
+          <li>Databricks & Spark</li>
+          <li>End-to-End ML Pipelines</li>
+          <li>ETL Workflows</li>
+          <li>Data Processing & Transformation Tools</li>
+        </ul>
+      ),
+    },
+    {
+      id: 3,
+      title: "Programming & Development",
+      image: <img src={DataVisualization} alt="Programming" className="icon" />,
+      description: (
+        <ul>
+          <li>Python (Core, OOP, ML Libraries)</li>
+          <li>Data Structures & Algorithms</li>
+          <li>SQL for Analytics & Transformation</li>
+          <li>FastAPI for Backend APIs</li>
+          <li>Streamlit for Interactive Apps</li>
+        </ul>
+      ),
+    },
+    {
+      id: 4,
+      title: "MLOps & Automation",
+      image: <img src={TechnicalWriting} alt="MLOps" className="icon" />,
+      description: (
+        <ul>
+          <li>Docker for Containerization</li>
+          <li>CI/CD with GitHub Actions</li>
+          <li>Automated Testing & Deployment</li>
+          <li>Monitoring & Versioning</li>
+        </ul>
+      ),
+    },
+    {
+      id: 5,
+      title: "Cloud Platforms",
+      image: <img src={TechnicalWriting} alt="Cloud Platforms" className="icon" />,
+      description: (
+        <ul>
+          <li>AWS (S3, Lambda, SageMaker, Bedrock, Redshift, Step Function)</li>
+          <li>GCP (Vertex AI, Agent Space, Cloud Functions)</li>
+          <li>Cloud-Native App Deployment</li>
+        </ul>
+      ),
+    },
+    {
+      id: 6,
+      title: "Visualization & BI",
+      image: <img src={WebDevelopment} alt="Visualization" className="icon" />,
+      description: (
+        <ul>
+          <li>Power BI Dashboards</li>
+          <li>Streamlit Visualizations</li>
+          <li>Data Storytelling for Stakeholders</li>
+        </ul>
+      ),
+    },
+    {
+      id: 7,
+      title: "Leadership & Collaboration",
+      image: <img src={Collaboration} alt="Leadership" className="icon" />,
+      description: (
+        <ul>
+          <li>Team Mentorship & Knowledge Sharing</li>
+          <li>Cross-Functional Collaboration</li>
+          <li>Technical Ownership & Project Leadership</li>
+        </ul>
+      ),
+    },
+    {
+      id: 8,
+      title: "System Design & Architecture",
+      image: <img src={Collaboration} alt="Architecture" className="icon" />,
+      description: (
+        <ul>
+          <li>End-to-End AI/ML System Design</li>
+          <li>Scalable Architecture & Optimization</li>
+          <li>Modular, Reusable Component Design</li>
+        </ul>
+      ),
+    },
+  ],
+};
 
 const PROJECTS = [
     {
@@ -90,11 +162,42 @@ const PROJECTS = [
     },
 ];
 
+const CERTIFICATES = [
+  {
+    id: 1,
+    title: "Python for Data Science – IBM",
+    description: "Fundamentals of Python, data wrangling and analysis.",
+    link: "https://coursera.org/verify/your-cert-id-1",
+    image: CourseraLogo,
+  },
+  {
+    id: 2,
+    title: "Deep Learning Specialization – Andrew Ng",
+    description: "Neural networks, CNNs, RNNs, and practical DL strategies.",
+    link: "https://coursera.org/verify/your-cert-id-2",
+    image: DatabricksLogo,
+  },
+  {
+    id: 3,
+    title: "Machine Learning – Google Cloud",
+    description: "Applied ML techniques using Google Cloud tools.",
+    link: "https://coursera.org/verify/your-cert-id-3",
+    image: LeadersLogo,
+  },
+  {
+    id: 4,
+    title: "Complete Python Bootcamp – Udemy",
+    description: "Hands-on Python course covering basics to advanced topics.",
+    link: "https://udemy.com/certificate/your-cert-id-4",
+    image: ComputerVisionLogo,
+  },
+];
+
 const OTHER_PLATFORMS = [
     {
         id: 1,
         title: "GitHub",
-        description: "Explore my projects, experiments, and open-source contributions.",
+        description: "Explore my projects, Learning Path, open-source contributions and technical experiments.",
         link: "https://github.com/RaviikrDS",
         image: (
             <a href="https://github.com/RaviikrDS" target="_blank" rel="noopener noreferrer">
@@ -105,7 +208,7 @@ const OTHER_PLATFORMS = [
     {
         id: 2,
         title: "Medium",
-        description: "Deep dive into my insights on Data Science, AI, and beyond.",
+        description: "Read my in-depth articles on Data Science, AI, Machine Learning and emerging technologies.",
         link: "https://medium.com/@ravikumaarDS",
         image: (
             <a href="https://medium.com/@ravikumaarDS" target="_blank" rel="noopener noreferrer">
@@ -116,7 +219,7 @@ const OTHER_PLATFORMS = [
     {
         id: 3,
         title: "LinkedIn",
-        description: "Connect with me for professional networking and career updates.",
+        description: "Let’s connect professionally - follow my latest updates, posts and collaborations.",
         link: "https://www.linkedin.com/in/raviikrds/",
         image: (
             <a href="https://www.linkedin.com/in/raviikrds/" target="_blank" rel="noopener noreferrer">
@@ -127,7 +230,7 @@ const OTHER_PLATFORMS = [
 ];
 
 const CONTACTINFO=[
-"Rajiv Gandhi Infotech Park, Maan Phase 3, Pune",
+"Rajiv Gandhi Infotech Park, Hinjewadi Phase 3, Pune",
         "Maharashtra, India",
         "411057",
         "raviikrds@gmail.com",
@@ -138,6 +241,7 @@ export {
     ABOUT,
     PROFICIENCIES,
     PROJECTS,
+    // CERTIFICATIONS,
     OTHER_PLATFORMS,
     CONTACTINFO
 }

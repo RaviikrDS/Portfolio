@@ -108,7 +108,6 @@ useEffect(() => {
   return () => cancelAnimationFrame(autoScrollRef.current);
 }, []);
 
-
   return (
     <Box ref={platformRef} sx={{ padding: '2rem', textAlign: 'center' }} id="certifications">
       <Typography className="section_text_p1" variant="caption">

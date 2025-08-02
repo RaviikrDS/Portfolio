@@ -169,6 +169,7 @@ const CERTIFICATIONS = [
     platform: "Coursera",
     link: "https://coursera.org/verify/your-cert-id-1",
     image: CourseraLogo,
+    description: "This certification validates my understanding of Python and data handling using IBM tools.",
   },
   {
     id: 2,
@@ -176,6 +177,7 @@ const CERTIFICATIONS = [
     platform: "Databricks",
     link: "https://coursera.org/verify/your-cert-id-2",
     image: DatabricksLogo,
+    description: "This certification validates my understanding of Python and data handling using IBM tools.",
   },
   {
     id: 3,
@@ -183,6 +185,7 @@ const CERTIFICATIONS = [
     platform: "Havard Learnings",
     link: "https://coursera.org/verify/your-cert-id-3",
     image: LeadersLogo,
+    description: "This certification validates my understanding of Python and data handling using IBM tools.",
   },
   {
     id: 4,
@@ -190,6 +193,7 @@ const CERTIFICATIONS = [
     platform: "Coursera",
     link: "https://udemy.com/certificate/your-cert-id-4",
     image: ComputerVisionLogo,
+    description: "This certification validates my understanding of Python and data handling using IBM tools.",
   },
 ];
 

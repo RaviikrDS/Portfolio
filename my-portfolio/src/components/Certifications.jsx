@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
@@ -12,6 +12,11 @@ import IconButton from '@mui/material/IconButton';
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { CERTIFICATIONS } from "../config/constants.jsx";
 
 import gsap from 'gsap';
@@ -19,22 +24,20 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
+import './profifciencies.css'
+
+
+
 gsap.registerPlugin(ScrollToPlugin);
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Certifications = () => {
   const platformRef = useRef(null);
-  const scrollRef = useRef(null);
   const [open, setOpen] = useState(false);
   const [selectedCert, setSelectedCert] = useState(null);
 
-  const scrollSpeed = 0.5; // pixels per frame
-const resumeDelay = 3000; // 3 seconds
 
-const autoScrollRef = useRef(null);
-const autoScrollPaused = useRef(false);
-const scrollTimeoutRef = useRef(null);
 
   useGSAP(() => {
     const caption = platformRef.current.querySelector('.section_text_p1');
@@ -65,48 +68,33 @@ const scrollTimeoutRef = useRef(null);
     setOpen(false);
     setSelectedCert(null);
   };
-const pauseAutoScroll = () => {
-  autoScrollPaused.current = true;
-  clearTimeout(scrollTimeoutRef.current);
-  scrollTimeoutRef.current = setTimeout(() => {
-    autoScrollPaused.current = false;
-  }, resumeDelay);
-};
 
-const scrollLeft = () => {
-  pauseAutoScroll();
-  scrollRef.current.scrollBy({ left: -500, behavior: 'smooth' });
-};
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 6000,
+    autoplaySpeed: 2000,
 
-const scrollRight = () => {
-  pauseAutoScroll();
-  scrollRef.current.scrollBy({ left: 500, behavior: 'smooth' });
-};
-
-
-useEffect(() => {
-  const container = scrollRef.current;
-  if (!container) return;
-
-  const originalScrollWidth = container.scrollWidth / 3;
-  container.scrollLeft = originalScrollWidth; // Start from the middle
-
-  const scroll = () => {
-    if (!autoScrollPaused.current) {
-      container.scrollLeft += scrollSpeed;
-
-      // Reset scrollLeft when near end of second set
-      if (container.scrollLeft >= originalScrollWidth * 2) {
-        container.scrollLeft = originalScrollWidth;
+    cssEase: "linear",
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
       }
-    }
-    autoScrollRef.current = requestAnimationFrame(scroll);
+    ]
   };
-
-  autoScrollRef.current = requestAnimationFrame(scroll);
-
-  return () => cancelAnimationFrame(autoScrollRef.current);
-}, []);
 
   return (
     <Box ref={platformRef} sx={{ padding: '2rem', textAlign: 'center' }} id="certifications">
@@ -118,31 +106,13 @@ useEffect(() => {
       </Typography>
 
       {/* Navigation Buttons */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 4 }}>
-        <IconButton onClick={scrollLeft}>
-          <IoIosArrowBack />
-        </IconButton>
-
-        <Box
-          ref={scrollRef}
-          sx={{
-            display: 'flex',
-            overflowX: 'auto',
-            scrollBehavior: 'smooth',
-            gap: 2,
-            px: 2,
-            width: '100%',
-            height: '26rem',
-            '&::-webkit-scrollbar': { display: 'none' }
-          }}
-        >
+      <Box sx={{ mt: 4, width: '90%', mx: 'auto' }}>
+        <Slider {...settings}>
           {CERTIFICATIONS.map((cert, index) => (
             <Card
               key={index}
               className="cert-card"
               sx={{
-                minWidth: 500,
-                maxWidth:550,
                 height: 350,
                 boxShadow: 5,
                 borderRadius: 2,
@@ -150,15 +120,13 @@ useEffect(() => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                transition: 'transform 0.3s ease',
-                '&:hover': { transform: 'scale(1.03)' },
               }}
             >
               <CardMedia
                 component="img"
                 image={cert.image}
                 alt={cert.title}
-                sx={{ height: 180, objectFit: 'contain', padding: '1rem' }}
+                sx={{ height: 180, objectFit: 'contain', py: '1rem' }}
               />
               <CardContent sx={{ paddingBottom: '1rem !important' }}>
                 <Typography variant="h6" fontSize="1rem" gutterBottom>{cert.title}</Typography>
@@ -176,11 +144,8 @@ useEffect(() => {
               </CardContent>
             </Card>
           ))}
-        </Box>
-
-        <IconButton onClick={scrollRight}>
-          <IoIosArrowForward />
-        </IconButton>
+        </Slider>
+        {/* </div> */}
       </Box>
 
       {/* Dialog Popup */}
@@ -190,12 +155,12 @@ useEffect(() => {
           <img
             src={selectedCert?.image}
             alt={selectedCert?.title}
-            style={{ width: '100%', height: 'auto', marginBottom: '1rem', boxSizing: 'border-box' }}
+            style={{ width: '60%', height: 'auto', marginBottom: '1rem', boxSizing: 'border-box' }}
           />
           <Typography variant="body1" gutterBottom>
             {selectedCert?.description || "This certification demonstrates my understanding and completion of a professional-level course."}
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2, width: '100%' }}>
             <Button onClick={handleClose} variant="outlined">Close</Button>
             {selectedCert?.link && (
               <Button

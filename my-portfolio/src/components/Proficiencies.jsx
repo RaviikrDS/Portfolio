@@ -67,7 +67,7 @@ const Proficiencies = () => {
           <Box as="article" key={item?.id} className="sub-detail-box">
               {item?.image}
               <Typography as="h3">{item?.title}</Typography>
-              <Typography as="p">{item?.description}</Typography>
+              <Typography variant="body1" component="div" className='prof-content'>{item?.description}</Typography>
           </Box>
         ))}
       </Box>

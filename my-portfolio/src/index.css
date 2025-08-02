@@ -250,6 +250,7 @@ article h3 {
   font-weight: 600 !important;
 }
 
+article .prof-content,
 article p {
   color: #777;
   line-height: 1.5;
@@ -634,4 +635,8 @@ footer p {
   height: 25px !important;
 }
 
+}
+
+.cert-card {
+  margin: 0 10px !important;
 }

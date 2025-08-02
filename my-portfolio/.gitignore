@@ -4,3 +4,5 @@ backend/venv/
 backend/.env
 .env
 my-portfolio/backend/.env
+main.cpython-312.pyc
+twilio_utils.cpython-312.pyc

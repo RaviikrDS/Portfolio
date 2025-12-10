@@ -311,19 +311,22 @@ article .icon {
 }
 
 .btn_container {
-  margin-top: .5rem;
   text-align: center;
+  margin: 17px 0 8px 0;
+  position: relative;
+  bottom: 0px;
 }
 
 .view-project-btn {
   background: linear-gradient(90deg, #6091cc, #ef8ebf);
   border: none;
   color: white;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   font-weight: 600;
   border-radius: 4rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size:13px;
 }
 
 .view-project-btn:hover {
@@ -639,4 +642,17 @@ footer p {
 
 .cert-card {
   margin: 0 10px !important;
+}
+
+.project-details {
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: normal;
+}
+
+.project-image {
+  height: 166px;
 }

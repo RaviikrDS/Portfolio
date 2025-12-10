@@ -59,11 +59,13 @@ const Projects = () => {
       <Box className="details_container">
       { PROJECTS?.length > 0 && PROJECTS.map((item) => (
           <Card variant="outlined" className="subdetail_container" key={item?.id}>
-            {item?.image}
+            <Box className="project-image">
+              {item?.image}
+            </Box>
             <Typography as="h3">{item?.title}</Typography>
-            <Typography as="p">{item?.description}</Typography>
+            <Typography className="project-details" as="p">{item?.description}</Typography>
             <Box className="btn_container">
-              <button className="view-project-btn" href={item?.link} target="_blank">View Project</button>
+              <a className="view-project-btn" href={item?.link} target="_blank">View Project</a>
             </Box>
 
           </Card>

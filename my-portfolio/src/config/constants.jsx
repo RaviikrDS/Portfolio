@@ -1,11 +1,11 @@
-import DataAnalysis from "../assets/data-analysis.png";
+import DataAnalysis from "../assets/aiml.png";
 import DataAnalytics from "../assets/data-analytics.png";
 import DataVisualization from "../assets/data-visualization.png";
 import TechnicalWriting from "../assets/technical-writing.png";
 import WebDevelopment from "../assets/front-end-web-development.png";
 import Collaboration from "../assets/collaboration.png";
-import Project1 from "../assets/Twitter.jpg";
-import Project2 from "../assets/TextClassification.png";
+import Project1 from "../assets/tubenotes.png";
+import Project2 from "../assets/faq.png";
 import Project3 from "../assets/AiVIdeo.jpg";
 import Project4 from "../assets/SocialMedia.jpg";
 import Github from "../assets/github.jpg";
@@ -134,66 +134,70 @@ const PROFICIENCIES = {
 const PROJECTS = [
     {
         id: 1,
-        title: "Twitter Sentiments Analysis",
-        description: "Uncovering public sentiment through AI-driven text analysis. This project analyzes tweets to determine sentiment—positive, negative, or neutral—using Natural Language Processing (NLP) and Machine Learning. It involves data preprocessing, text vectorization, and classification using Deep Learning models. The system is trained on a labeled dataset and deployed via Flask and AWS, making it scalable for real-time analysis. This solution helps brands and businesses gain insights into customer opinions and trends.",
-        image: <img src={Project1} alt="Twitter Sentiments Analysis" className="project_img" />
+        title: "TubeNotes AI",
+        description: "Tubenotes AI transforms YouTube video content into concise, organized notes using advanced AI. Save time, improve retention, and turn any YouTube video into actionable insights in your preferred language.",
+        image: <img src={Project1} alt="TubeNotes AI" className="project_img" />,
+        link: "https://github.com/RaviikrDS/TubeNotes-AI.git"
         
     },
     {
         id: 2,
-        title: "Text Classification",
-        description: "This project classifies text into predefined categories using Natural Language Processing (NLP) and Deep Learning techniques. It involves data preprocessing, tokenization, and feature extraction using libraries like TensorFlow and SciKit-Learn. A neural network-based model is trained to accurately categorize text, making it applicable for spam detection, sentiment analysis, and document classification. The model is deployed using Flask and AWS, ensuring real-time and scalable predictions.",
-        image: <img src={Project2} alt="Text Classification" className="project_img" />
+        title: "Smart FaQ Chatbot",
+        description: "A lightweight, free, and fully local chatbot for answering common questions using document embeddings - powered by FAISS, HuggingFaceEmbeddings, and a FastAPI + Streamlit stack.",
+        image: <img src={Project2} alt="Smart FaQ Chatbot" className="project_img" />,
+        link: "https://github.com/RaviikrDS/smart_faq_chatbot.git/"
         
     },
-    {
-        id: 3,
-        title: "AI Video Creator",
-        description: "This project leverages Generative AI and Deep Learning to create videos from text-based inputs. It integrates Natural Language Processing (NLP) and Computer Vision to generate relevant visuals, animations, and voiceovers. Using LLMs, AI-powered video synthesis, and AWS cloud services, the system converts scripts into engaging video content. This solution is ideal for content creators, businesses, and automated storytelling, enabling scalable and high-quality video production with minimal manual effort.",
-        image: <img src={Project3} alt="AI Video Creator" className="project_img" />
+    // {
+    //     id: 3,
+    //     title: "Nina - IT Assistant",
+    //     description: "This project leverages Generative AI and Deep Learning to create videos from text-based inputs. It integrates Natural Language Processing (NLP) and Computer Vision to generate relevant visuals, animations, and voiceovers. Using LLMs, AI-powered video synthesis, and AWS cloud services, the system converts scripts into engaging video content. This solution is ideal for content creators, businesses, and automated storytelling, enabling scalable and high-quality video production with minimal manual effort.",
+    //     image: <img src={Project3} alt="AI Video Creator" className="project_img" />,
+    //     link: "https://ai-video-creator.streamlit.app/"
         
-    },
-    {
-        id: 4,
-        title: "Automate Social Media Content Uploader",
-        description: "Seamlessly scheduling and uploading content with AI-powered automation. This project automates the process of uploading videos, images, and captions to social media platforms like Instagram, Twitter, and LinkedIn. Using Python, Selenium, and API integrations, it streamlines content scheduling, hashtag management, and post customization. The system is configurable via a JSON-based setup, allowing users to enable or disable features like thumbnail usage, captions, and logging. Designed for content creators and businesses, this tool enhances efficiency by eliminating manual uploads and ensuring consistent online engagement.",
-        image: <img src={Project4} alt="Automate Social Media Content Uploader" className="project_img" />
+    // },
+    // {
+    //     id: 4,
+    //     title: "Auto Insta Content Uploader",
+    //     description: "Seamlessly scheduling and uploading content with AI-powered automation. This project automates the process of uploading videos, images, and captions to social media platforms like Instagram, Twitter, and LinkedIn. Using Python, Selenium, and API integrations, it streamlines content scheduling, hashtag management, and post customization. The system is configurable via a JSON-based setup, allowing users to enable or disable features like thumbnail usage, captions, and logging. Designed for content creators and businesses, this tool enhances efficiency by eliminating manual uploads and ensuring consistent online engagement.",
+    //     image: <img src={Project4} alt="Automate Social Media Content Uploader" className="project_img" />,
+    //     link: "https://auto-insta-content-uploader.streamlit.app/"
         
-    },
+    // },
 ];
 
 const CERTIFICATIONS = [
   {
     id: 1,
-    title: "Python for Data Science – IBM",
+    title: "Crash Course on Python | Google",
     platform: "Coursera",
-    link: "https://coursera.org/verify/your-cert-id-1",
+    link: "https://www.coursera.org/account/accomplishments/verify/LMLTQFFQPMP3",
     image: CourseraLogo,
-    description: "This certification validates my understanding of Python and data handling using IBM tools.",
+    description: "Earned a Google-endorsed certification that validates my ability to write, debug, and apply Python code effectively.",
   },
   {
     id: 2,
-    title: "Deep Learning Specialization – Andrew Ng",
+    title: "Databricks Fundamentals | Databricks Academy",
     platform: "Databricks",
-    link: "https://coursera.org/verify/your-cert-id-2",
+    // link: "https://coursera.org/verify/your-cert-id-2",
     image: DatabricksLogo,
-    description: "This certification validates my understanding of Python and data handling using IBM tools.",
+    description: "Completed core training in Databricks fundamentals, covering unified analytics, collaborative data engineering workflows, and essential machine learning concepts",
   },
   {
     id: 3,
-    title: "Machine Learning – Google Cloud",
+    title: "Emerging Leaders Program | Havard Business",
     platform: "Havard Learnings",
-    link: "https://coursera.org/verify/your-cert-id-3",
+    // link: "https://coursera.org/verify/your-cert-id-3",
     image: LeadersLogo,
-    description: "This certification validates my understanding of Python and data handling using IBM tools.",
+    description: "Developed a strong foundation in leadership principles, behavior frameworks, and strategic leadership skills through a Harvard Business program.",
   },
   {
     id: 4,
-    title: "Complete Python Bootcamp – Udemy",
+    title: "Introduction to Computer Vision with TensorFlow | Coursera",
     platform: "Coursera",
-    link: "https://udemy.com/certificate/your-cert-id-4",
+    link: "https://www.coursera.org/account/accomplishments/verify/6EC5TGTLWN2Z",
     image: ComputerVisionLogo,
-    description: "This certification validates my understanding of Python and data handling using IBM tools.",
+    description: "A certification demonstrating foundational knowledge of computer vision concepts using TensorFlow.",
   },
 ];
 

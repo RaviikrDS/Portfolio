@@ -305,9 +305,10 @@ article .icon {
 }
 
 .subdetail_container p {
-  color: #777;
-  line-height: 1.5;
-  text-align: justify;
+  color: #353535;
+    line-height: 1.5;
+    text-align: justify;
+    font-style: italic;
 }
 
 .btn_container {
@@ -428,6 +429,11 @@ footer p {
   cursor: pointer;
 }
 
+.project-image {
+  height: 250px;
+}
+
+
 /* Medium screens (md): tablets, typically 900px and down */
 @media (max-width: 1200px) {
   #profile {
@@ -484,6 +490,10 @@ footer p {
   padding: 1rem;
   max-width: 320px;
   gap:2.5rem;
+}
+
+.project-image {
+  height: 180px;
 }
   
 }
@@ -638,6 +648,10 @@ footer p {
   height: 25px !important;
 }
 
+.project-image {
+  height: 140px;
+}
+
 }
 
 .cert-card {
@@ -652,7 +666,6 @@ overflow: hidden;
 text-overflow: ellipsis;
 white-space: normal;
 }
-
-.project-image {
-  height: 166px;
+.project-image img {
+  height: 100%;
 }

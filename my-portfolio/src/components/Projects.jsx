@@ -62,7 +62,7 @@ const Projects = () => {
             <Box className="project-image">
               {item?.image}
             </Box>
-            <Typography as="h3">{item?.title}</Typography>
+            <Typography as="h3" sx={{marginTop: '8px'}}>{item?.title}</Typography>
             <Typography className="project-details" as="p">{item?.description}</Typography>
             <Box className="btn_container">
               <a className="view-project-btn" href={item?.link} target="_blank">View Project</a>

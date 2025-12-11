@@ -14,15 +14,22 @@ GOOGLE_SCRIPT_URL = os.getenv("GOOGLE_SCRIPT_URL")
 
 app = FastAPI()
 
+# -----------------------------------------------------------------------------
+# CORS - include Render URL, Vercel URL, and localhost for local dev
+# -----------------------------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
-    # allow_origins=["http://localhost:5173"],
-    allow_origins=["https://portfolio-raviikrds.vercel.app"],
-    allow_origin_regex=r"^https://.*\.vercel\.app$",
+    allow_origins=[
+        "https://portfolio-raviikrds.vercel.app",        # your Vercel frontend
+        "https://portfolio-cmaj.onrender.com",           # Render service domain (add yours)
+        "http://localhost:3000",                         # local dev (React/Vite default)
+        "http://localhost:5173",                         # alternate local dev port
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 # Logging: file + stream so Render shows logs
 LOGS_DIR = os.path.join(os.path.dirname(__file__), "Logs")
 os.makedirs(LOGS_DIR, exist_ok=True)
@@ -54,6 +61,13 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "healthy", "timestamp": datetime.utcnow().isoformat() + "Z"}
+
+# Optional: explicit OPTIONS handler for quick debugging of preflight
+# (You can remove this once CORS middleware is tested and working)
+@app.options("/contact")
+def contact_options():
+    # FastAPI + CORSMiddleware should handle this automatically; this is a quick fallback.
+    return Response(status_code=200)
 
 @app.post("/contact")
 async def contact(data: ContactForm):

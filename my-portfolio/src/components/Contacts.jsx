@@ -56,7 +56,8 @@ const Projects = () => {
     setStatus("");
 
     try {
-      const response = await axios.post("http://localhost:8000/contact", contactInfo);   //Need to update when backend is ready
+      // const response = await axios.post("http://localhost:8000/contact", contactInfo);   //Localhost used for testing
+      const response = await axios.post("https://portfolio-cmaj.onrender.com/contact", contactInfo);   //Need to update when backend is ready
       if (response.status === 200) {
         setStatus("Message sent successfully!");
         setContactInfo({ name: "", email: "", message: "" }); // reset

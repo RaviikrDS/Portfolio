@@ -9,11 +9,8 @@ from twilio_utils import send_whatsapp_notification
 import logging
 
 load_dotenv()
-
 GOOGLE_SCRIPT_URL = os.getenv("GOOGLE_SCRIPT_URL")
-
 app = FastAPI()
-
 # -----------------------------------------------------------------------------
 # CORS - include Render URL, Vercel URL, and localhost for local dev
 # -----------------------------------------------------------------------------
@@ -101,6 +98,7 @@ async def contact(data: ContactForm):
     # Send WhatsApp notification but don't let it crash the entire request silently.
     try:
         send_whatsapp_notification(data.name, data.email, data.message)
+        logger.info("Whatsapp notification sent successfully!.")
     except Exception:
         logger.exception("Failed to send WhatsApp notification")
 

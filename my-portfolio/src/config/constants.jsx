@@ -1,22 +1,20 @@
-import DataAnalysis from "../assets/aiml.png";
-import DataAnalytics from "../assets/data-analytics.png";
-import DataVisualization from "../assets/data-visualization.png";
-import TechnicalWriting from "../assets/technical-writing.png";
-import WebDevelopment from "../assets/front-end-web-development.png";
-import Collaboration from "../assets/collaboration.png";
+import AIML from "../assets/aiml.png";
+import Programming from "../assets/programming.png";
+import MLOps from "../assets/MLOps.png";
+import Cloud from "../assets/cloud.png";
+import Visualization from "../assets/front-end-web-development.png";
+import SoftSkills from "../assets/softskills.png";
 import Project1 from "../assets/tubenotes.png";
 import Project2 from "../assets/faq.png";
 import Project3 from "../assets/AiVIdeo.jpg";
 import Project4 from "../assets/SocialMedia.jpg";
 import Github from "../assets/github.jpg";
 import Medium from "../assets/medium.png";
-import LinkedIn from "../assets/linkedin.png";  // Added LinkedIn image import
-
+import LinkedIn from "../assets/linkedin.png";  
 import CourseraLogo from "../assets/certificates/Crash_Course_on_Python.png";
 import DatabricksLogo from "../assets/certificates/Databricks_Fundamentsals.png";
 import LeadersLogo from "../assets/certificates/Emerging_Leadership_Program.png";
 import ComputerVisionLogo from "../assets/certificates/Introduction_to_Computer_Vision_with_TensorFlow.png";
-
 
 const ABOUT = [
     "Building scalable solutions with AI, Machine Learning, NLP, Generative AI, and Agentic AI to solve complex real-world business challenges, optimize decision-making, and drive meaningful impact at scale."
@@ -29,37 +27,25 @@ const PROFICIENCIES = {
     {
       id: 1,
       title: "AI, ML & GenAI",
-      image: <img src={DataAnalysis} alt="AI/ML" className="icon" />,
+      image: <img src={AIML} alt="AI/ML" className="icon" />,
       description: (
         <ul>
-          <li>Model Development: ML & Deep Learning</li>
+          <li>AI, ML & Deep Learning</li>
           <li>Natural Language Processing</li>
           <li>GenAI (LLMs, Prompt Engineering)</li>
-          <li>Retrieval-Augmented Generation(RAG)</li>
+          <li>Retrieval-Augmented Generation</li>
           <li>Agentic AI Systems</li>
+          <li>Statistics & Probability</li>
         </ul>
       ),
     },
     {
       id: 2,
-      title: "Data Engineering & Pipelines",
-      image: <img src={DataAnalytics} alt="Data Engineering" className="icon" />,
+      title: "Programming Languages",
+      image: <img src={Programming} alt="Programming Languages" className="icon" />,
       description: (
         <ul>
-          <li>Databricks & Spark</li>
-          <li>End-to-End ML Pipelines</li>
-          <li>ETL Workflows</li>
-          <li>Data Processing & Transformation Tools</li>
-        </ul>
-      ),
-    },
-    {
-      id: 3,
-      title: "Programming & Development",
-      image: <img src={DataVisualization} alt="Programming" className="icon" />,
-      description: (
-        <ul>
-          <li>Python (Core, OOP, ML Libraries)</li>
+          <li>Python (Core, OOP)</li>
           <li>Data Structures & Algorithms</li>
           <li>SQL for Analytics & Transformation</li>
           <li>FastAPI for Backend APIs</li>
@@ -68,9 +54,9 @@ const PROFICIENCIES = {
       ),
     },
     {
-      id: 4,
+      id: 3,
       title: "MLOps & Automation",
-      image: <img src={TechnicalWriting} alt="MLOps" className="icon" />,
+      image: <img src={MLOps} alt="MLOps" className="icon" />,
       description: (
         <ul>
           <li>Docker for Containerization</li>
@@ -81,50 +67,38 @@ const PROFICIENCIES = {
       ),
     },
     {
-      id: 5,
+      id: 4,
       title: "Cloud Platforms",
-      image: <img src={TechnicalWriting} alt="Cloud Platforms" className="icon" />,
+      image: <img src={Cloud} alt="Cloud Platforms" className="icon" />,
       description: (
         <ul>
-          <li>AWS (S3, Lambda, SageMaker, Bedrock, Redshift, Step Function)</li>
-          <li>GCP (Vertex AI, Agent Space, Cloud Functions)</li>
+          <li>AWS (SageMaker, Bedrock)</li>
+          <li>GCP (Vertex AI, Agent Space)</li>
           <li>Cloud-Native App Deployment</li>
         </ul>
       ),
     },
     {
-      id: 6,
-      title: "Visualization & BI",
-      image: <img src={WebDevelopment} alt="Visualization" className="icon" />,
+      id: 5,
+      title: "Data Visualization & BI",
+      image: <img src={Visualization} alt="Visualization" className="icon" />,
       description: (
         <ul>
           <li>Power BI Dashboards</li>
-          <li>Streamlit Visualizations</li>
+          <li>Matplotlib & Seaborn</li>
           <li>Data Storytelling for Stakeholders</li>
         </ul>
       ),
     },
     {
-      id: 7,
-      title: "Leadership & Collaboration",
-      image: <img src={Collaboration} alt="Leadership" className="icon" />,
+      id: 6,
+      title: "SOft Skills",
+      image: <img src={SoftSkills} alt="Leadership" className="icon" />,
       description: (
         <ul>
-          <li>Team Mentorship & Knowledge Sharing</li>
+          <li>Problem Solving & Storytelling</li>
+          <li>Leadership & Mentorship</li>
           <li>Cross-Functional Collaboration</li>
-          <li>Technical Ownership & Project Leadership</li>
-        </ul>
-      ),
-    },
-    {
-      id: 8,
-      title: "System Design & Architecture",
-      image: <img src={Collaboration} alt="Architecture" className="icon" />,
-      description: (
-        <ul>
-          <li>End-to-End AI/ML System Design</li>
-          <li>Scalable Architecture & Optimization</li>
-          <li>Modular, Reusable Component Design</li>
         </ul>
       ),
     },

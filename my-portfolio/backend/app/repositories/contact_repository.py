@@ -4,55 +4,51 @@ Contact Repository.
 Responsible for coordinating persistence
 for contact requests.
 """
-from datetime import datetime
-from app.utils.id_generator import generate_contact_id
+
+from typing import Any
 
 from app.repositories.dynamodb_repository import DynamoDBRepository
 from app.repositories.s3_repository import S3Repository
-from app.schemas.contact import ContactRequest
 
 
 class ContactRepository:
     """Repository for contact persistence."""
 
     @staticmethod
-    def save(contact: ContactRequest) -> dict:
+    def save(
+        payload: dict[str, Any],
+        metadata: dict[str, Any],
+    ) -> dict:
         """
-        Save a contact request.
+        Persist a contact request.
 
-        Phase 3.1:
-            Placeholder orchestration.
+        Args:
+            payload: Complete contact payload to store in S3.
+            metadata: Searchable metadata to store in DynamoDB.
 
-        Future:
-            - Upload full payload to S3
-            - Save metadata to DynamoDB
+        Returns:
+            Persistence result.
         """
-        contact_id = generate_contact_id()
-        date_path = datetime.utcnow().strftime("%Y/%m/%d")
+
+        contact_id = payload["contact_id"]
+
+        received_at = payload["received_at"]
+
+        date_path = received_at[:10].replace("-", "/")
 
         s3_key = f"contacts/{date_path}/{contact_id}.json"
 
-        payload = {
-            "contact_id": contact_id,
-            "received_at": datetime.utcnow().isoformat(),
-            **contact.model_dump(),
-        }
-
+        # Upload complete payload to S3
         S3Repository.upload(
             key=s3_key,
             data=payload,
         )
 
-        DynamoDBRepository.save(
-            {
-                "contact_id": contact_id,
-                "name": contact.name,
-                "email": contact.email,
-                "subject": contact.subject,
-                "received_at": payload["received_at"],
-                "s3_key": s3_key,
-            }
-        )
+        # Add S3 reference to metadata
+        metadata["s3_key"] = s3_key
+
+        # Save metadata to DynamoDB
+        DynamoDBRepository.save(metadata)
 
         return {
             "saved": True,

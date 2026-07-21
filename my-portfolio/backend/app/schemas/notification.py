@@ -1,10 +1,14 @@
+"""
+Notification schemas.
+"""
+
 from pydantic import BaseModel
 
 
-class NotificationResponse(BaseModel):
+class NotificationResult(BaseModel):
+    """Result of a notification delivery."""
 
+    channel: str
     success: bool
-
-    provider: str
-
     message: str
+    error: str | None = None

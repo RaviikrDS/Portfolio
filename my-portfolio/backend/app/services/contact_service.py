@@ -2,21 +2,15 @@
 Contact Service.
 
 Contains business logic for contact requests.
-
-Phase 2:
-    - Accept validated request
-    - Delegate persistence to repository
-
-Future:
-    - Validate business rules
-    - Store files in S3
-    - Store metadata in DynamoDB
-    - Publish SNS events
-    - Trigger notifications
 """
 
+from datetime import UTC, datetime
+
+from app.core.logger import logger
+from app.notifications.notification_manager import NotificationManager
 from app.repositories.contact_repository import ContactRepository
 from app.schemas.contact import ContactRequest
+from app.utils.id_generator import generate_contact_id
 
 
 class ContactService:
@@ -34,10 +28,46 @@ class ContactService:
             API response.
         """
 
-        repository_result = ContactRepository.save(contact)
+        # Generate business values
+        contact_id = generate_contact_id()
+        received_at = datetime.now(UTC).isoformat()
+
+        # Build payload for S3
+        payload = {
+            "contact_id": contact_id,
+            "received_at": received_at,
+            **contact.model_dump(),
+        }
+
+        # Build metadata for DynamoDB
+        metadata = {
+            "contact_id": contact_id,
+            "name": contact.name,
+            "email": contact.email,
+            "subject": contact.subject,
+            "received_at": received_at,
+        }
+
+        # Persist contact
+        repository_result = ContactRepository.save(
+            payload=payload,
+            metadata=metadata,
+        )
+
+        # Send notifications (non-blocking)
+        try:
+            NotificationManager.notify_contact_received(
+                contact_id=contact_id,
+                contact=contact,
+            )
+        except Exception:
+            logger.exception(
+                "Failed to process notifications for contact: %s",
+                contact_id,
+            )
 
         return {
             "success": True,
             "message": "Contact request received successfully.",
-            "data": repository_result["contact"],
+            "data": repository_result,
         }

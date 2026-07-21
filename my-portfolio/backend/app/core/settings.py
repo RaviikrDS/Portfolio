@@ -51,7 +51,7 @@ class Settings(BaseSettings):
     # SNS
     # ======================================================
 
-    SNS_TOPIC_ARN: str = Field(...)
+    AWS_SNS_TOPIC_ARN: str = Field(...)
 
     # ======================================================
     # Telegram
@@ -61,13 +61,17 @@ class Settings(BaseSettings):
     TELEGRAM_CHAT_ID: str = Field(...)
 
     # ======================================================
-    # Twilio
+    # Whatsapp
     # ======================================================
 
-    TWILIO_ACCOUNT_SID: str = Field(...)
-    TWILIO_AUTH_TOKEN: str = Field(...)
-    TWILIO_WHATSAPP_NUMBER: str = Field(...)
-    YOUR_WHATSAPP_NUMBER: str = Field(...)
+    WHATSAPP_ACCESS_TOKEN: str = Field(...)
+    WHATSAPP_PHONE_NUMBER_ID: str = Field(...)
+    WHATSAPP_BUSINESS_ACCOUNT_ID: str = Field(...)
+    WHATSAPP_RECIPIENT_NUMBER: str = Field(...)
+
+    ENABLE_SNS: bool = True
+    ENABLE_TELEGRAM: bool = True
+    ENABLE_WHATSAPP: bool = False
 
     # Allowed Origins
     ALLOWED_ORIGINS: str

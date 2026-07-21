@@ -35,7 +35,10 @@ class Settings(BaseSettings):
     # S3
     # ======================================================
 
-    S3_BUCKET_NAME: str = Field(...)
+    AWS_S3_BUCKET_NAME: str = Field(...)
+
+    AWS_ACCESS_KEY_ID: str = Field(...)
+    AWS_SECRET_ACCESS_KEY: str = Field(...)
 
     # ======================================================
     # DynamoDB

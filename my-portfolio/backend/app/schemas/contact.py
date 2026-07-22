@@ -16,7 +16,6 @@ class ContactRequest(BaseModel):
             "example": {
                 "name": "Ravi Kumar",
                 "email": "ravi@example.com",
-                "subject": "Portfolio Inquiry",
                 "message": "I would like to discuss an AI/ML project."
             }
         }
@@ -32,13 +31,6 @@ class ContactRequest(BaseModel):
     email: EmailStr = Field(
         ...,
         description="Sender email address",
-    )
-
-    subject: str = Field(
-        ...,
-        min_length=5,
-        max_length=200,
-        description="Subject of the message",
     )
 
     message: str = Field(

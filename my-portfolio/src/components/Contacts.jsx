@@ -58,11 +58,11 @@ const Projects = () => {
     try {
       // const response = await axios.post("http://localhost:8000/contact", contactInfo);   //Localhost used for testing
       const response = await axios.post("https://q9078pp8b7.execute-api.ap-south-1.amazonaws.com/prod/api/v1/contact", contactInfo);   //Need to update when backend is ready
-      if (response.status === 200) {
+      if (response.status >= 200 && response.status < 300) {
         setStatus("Message sent successfully!");
         setContactInfo({ name: "", email: "", message: "" }); // reset
       } else {
-        setStatus("Failed to send message.");
+        setStatus("Failed to send message!");
       }
     } catch (error) {
       console.error(error);

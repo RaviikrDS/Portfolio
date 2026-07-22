@@ -1,0 +1,15 @@
+### Health Check
+GET https://q9078pp8b7.execute-api.ap-south-1.amazonaws.com/prod/api/v1/health
+
+###
+
+### Contact API
+POST https://q9078pp8b7.execute-api.ap-south-1.amazonaws.com/prod/api/v1/contact
+Content-Type: application/json
+
+{
+    "name": "Ravi Kumar",
+    "email": "ravi@example.com",
+    "subject": "Production Test",
+    "message": "Testing deployed backend from VS Code."
+}

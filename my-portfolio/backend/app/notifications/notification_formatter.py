@@ -14,7 +14,7 @@ class NotificationFormatter:
 
 Name: {contact.name}
 Email: {contact.email}
-Subject: {contact.subject}
+Subject: "New Portfolio Contact"
 
 Message:
 {contact.message}

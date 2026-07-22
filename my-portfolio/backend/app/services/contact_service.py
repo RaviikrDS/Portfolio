@@ -66,7 +66,7 @@ class ContactService:
             "received_at": received_at,
             "name": contact.name,
             "email": contact.email,
-            "subject": contact.subject,
+            "subject": "Portfolio Contact",
         }
 
         logger.info(

@@ -62,7 +62,7 @@ const Projects = () => {
         setStatus("Message sent successfully!");
         setContactInfo({ name: "", email: "", message: "" }); // reset
       } else {
-        setStatus("Failed to send message.");
+        setStatus("Failed to send message!");
       }
     } catch (error) {
       console.error(error);

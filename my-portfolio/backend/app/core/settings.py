@@ -1,14 +1,18 @@
-from functools import lru_cache
+"""
+Application Settings
+"""
 
+from functools import lru_cache
 from pathlib import Path
+from typing import Optional
+
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+
 class Settings(BaseSettings):
-    """
-    Application settings loaded from .env
-    """
 
     model_config = SettingsConfigDict(
         env_file=BASE_DIR / ".env",
@@ -21,67 +25,77 @@ class Settings(BaseSettings):
     # Application
     # ======================================================
 
-    APP_NAME: str = Field(...)
-    APP_VERSION: str = Field(...)
-    APP_ENV: str = Field(...)
+    APP_NAME: str = "Portfolio Backend"
+    APP_VERSION: str = "1.0.0"
+    APP_ENV: str = "dev"
 
     # ======================================================
     # AWS
     # ======================================================
 
-    AWS_REGION: str = Field(...)
+    AWS_REGION: str = "ap-south-1"
 
     # ======================================================
     # S3
     # ======================================================
 
-    AWS_S3_BUCKET_NAME: str = Field(...)
+    AWS_S3_BUCKET_NAME: Optional[str] = None
 
-    AWS_ACCESS_KEY_ID: str = Field(...)
-    AWS_SECRET_ACCESS_KEY: str = Field(...)
+    # Leave these optional.
+    # In Lambda we will use IAM Role instead of access keys.
+    AWS_ACCESS_KEY_ID: Optional[str] = None
+    AWS_SECRET_ACCESS_KEY: Optional[str] = None
 
     # ======================================================
     # DynamoDB
     # ======================================================
 
-    DYNAMODB_CONTACT_TABLE: str = Field(...)
-    DYNAMODB_NOTIFICATION_TABLE: str = Field(...)
+    DYNAMODB_CONTACT_TABLE: Optional[str] = None
+    DYNAMODB_NOTIFICATION_TABLE: Optional[str] = None
 
     # ======================================================
     # SNS
     # ======================================================
 
-    AWS_SNS_TOPIC_ARN: str = Field(...)
+    AWS_SNS_TOPIC_ARN: Optional[str] = None
 
     # ======================================================
     # Telegram
     # ======================================================
 
-    TELEGRAM_BOT_TOKEN: str = Field(...)
-    TELEGRAM_CHAT_ID: str = Field(...)
+    TELEGRAM_BOT_TOKEN: Optional[str] = None
+    TELEGRAM_CHAT_ID: Optional[str] = None
 
     # ======================================================
-    # Whatsapp
+    # WhatsApp
     # ======================================================
 
-    WHATSAPP_ACCESS_TOKEN: str = Field(...)
-    WHATSAPP_PHONE_NUMBER_ID: str = Field(...)
-    WHATSAPP_BUSINESS_ACCOUNT_ID: str = Field(...)
-    WHATSAPP_RECIPIENT_NUMBER: str = Field(...)
+    WHATSAPP_ACCESS_TOKEN: Optional[str] = None
+    WHATSAPP_PHONE_NUMBER_ID: Optional[str] = None
+    WHATSAPP_BUSINESS_ACCOUNT_ID: Optional[str] = None
+    WHATSAPP_RECIPIENT_NUMBER: Optional[str] = None
+
+    # ======================================================
+    # Feature Flags
+    # ======================================================
 
     ENABLE_SNS: bool = True
     ENABLE_TELEGRAM: bool = True
     ENABLE_WHATSAPP: bool = False
 
-    # Allowed Origins
-    ALLOWED_ORIGINS: str
+    # ======================================================
+    # API
+    # ======================================================
+
+    ALLOWED_ORIGINS: str = (
+        "https://portfolio-raviikrds.vercel.app,"
+        "http://localhost:3000,"
+        "http://localhost:5173"
+    )
 
 
 @lru_cache
 def get_settings() -> Settings:
-    """
-    Returns cached settings instance.
-    """
     return Settings()
 
 

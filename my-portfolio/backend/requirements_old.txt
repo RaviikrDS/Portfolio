@@ -1,6 +1,0 @@
-fastapi
-uvicorn
-twilio
-gspread
-python-dotenv
-requests

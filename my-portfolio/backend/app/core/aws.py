@@ -6,30 +6,20 @@ from app.core.settings import settings
 class AWSClients:
     """
     Singleton AWS clients.
+
+    Credentials are automatically resolved by boto3:
+    - Local machine: AWS CLI / AWS Profile / Environment Variables
+    - AWS Lambda: IAM Execution Role
     """
 
     def __init__(self):
-
-        self.s3 = boto3.client(
-            "s3",
-            region_name=settings.AWS_REGION,
-            aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-            aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+        session = boto3.Session(
+            region_name=settings.AWS_REGION
         )
 
-        self.sns = boto3.client(
-            "sns",
-            region_name=settings.AWS_REGION,
-            aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-            aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-        )
-
-        self.dynamodb = boto3.resource(
-            "dynamodb",
-            region_name=settings.AWS_REGION,
-            aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-            aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-        )
+        self.s3 = session.client("s3")
+        self.sns = session.client("sns")
+        self.dynamodb = session.resource("dynamodb")
 
 
 aws = AWSClients()

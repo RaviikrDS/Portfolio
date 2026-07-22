@@ -4,20 +4,35 @@ Contact API endpoints.
 
 from fastapi import APIRouter, status
 
-from app.schemas.contact import ContactRequest
+from app.schemas.contact import ContactRequest, ContactResponse
 from app.services.contact_service import ContactService
 
-router = APIRouter()
+router = APIRouter(
+    prefix="/contact",
+    tags=["Contact"],
+)
 
 
 @router.post(
-    "/contact",
+    "",
+    response_model=ContactResponse,
     status_code=status.HTTP_201_CREATED,
     summary="Submit a contact request",
+    description="Accepts a contact request and stores it in the backend.",
 )
-async def submit_contact(contact: ContactRequest):
+def submit_contact(
+    contact: ContactRequest,
+) -> ContactResponse:
     """
     Submit a contact request.
+
+    Args:
+        contact: Validated contact request.
+
+    Returns:
+        ContactResponse
     """
 
-    return ContactService.submit_contact(contact)
+    result = ContactService.submit_contact(contact)
+
+    return ContactResponse(**result)

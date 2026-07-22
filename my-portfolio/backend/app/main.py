@@ -2,11 +2,9 @@
 Application Entry Point.
 """
 
-from fastapi import FastAPI
-from mangum import Mangum
-
-
 from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
 
 from app.api.router import api_router
 from app.core.logger import logger
@@ -15,6 +13,11 @@ from app.exceptions.handlers import register_exception_handlers
 from app.middleware.cors import register_cors
 from app.middleware.logging import LoggingMiddleware
 from app.middleware.request_id import RequestIDMiddleware
+
+
+# ==========================================================
+# Application Lifespan
+# ==========================================================
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -28,6 +31,7 @@ async def lifespan(app: FastAPI):
     yield
 
     logger.info("Application shutdown.")
+
 
 # ==========================================================
 # FastAPI Application
@@ -44,13 +48,30 @@ app = FastAPI(
 
 
 # ==========================================================
+# Root Endpoint
+# ==========================================================
+
+@app.get("/", tags=["Root"])
+async def root():
+    return {
+        "service": settings.APP_NAME,
+        "version": settings.APP_VERSION,
+        "environment": settings.APP_ENV,
+        "status": "running",
+        "docs": "/docs",
+        "health": "/api/v1/health",
+    }
+
+
+# ==========================================================
 # Middleware
 # ==========================================================
+
+register_cors(app)
 
 app.add_middleware(RequestIDMiddleware)
 app.add_middleware(LoggingMiddleware)
 
-register_cors(app)
 
 # ==========================================================
 # Exception Handlers
@@ -58,15 +79,9 @@ register_cors(app)
 
 register_exception_handlers(app)
 
+
 # ==========================================================
 # API Routes
 # ==========================================================
 
 app.include_router(api_router)
-
-
-# ==========================================================
-# AWS Lambda Handler
-# ==========================================================
-
-handler = Mangum(app)

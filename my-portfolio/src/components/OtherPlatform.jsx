@@ -1,77 +1,78 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import { OTHER_PLATFORMS } from "../config/constants.jsx";
 import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import { FaArrowRight, FaGithub, FaKaggle, FaLinkedin, FaMedium } from "react-icons/fa6";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { OTHER_PLATFORMS } from "../config/constants.jsx";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-import gsap from 'gsap';
-
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
-const Projects = () => {
+const platformIcons = { GitHub: FaGithub, Medium: FaMedium, LinkedIn: FaLinkedin, Kaggle: FaKaggle };
 
+const OtherPlatform = () => {
   const platformRef = useRef(null);
 
   useGSAP(() => {
     const platformContainer = platformRef.current;
-    const caption = platformRef.current.querySelector('.section_text_p1');
-    const heading = platformRef.current.querySelector('.section_heading');
-    const subDetailBox = platformRef.current.querySelectorAll('.subdetail_container');
+    const caption = platformContainer?.querySelector(".section_text_p1");
+    const heading = platformContainer?.querySelector(".section_heading");
+    const cards = platformContainer?.querySelectorAll(".platform-card");
+    if (!platformContainer || !caption || !heading) return undefined;
 
-    
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: platformContainer,
-            start: "top 80%",
-            end: "bottom 70%",
-            toggleActions: "play none none none",
-            // markers: true,
-        }
+    const timeline = gsap.timeline({
+      scrollTrigger: { trigger: platformContainer, start: "top 80%", toggleActions: "play none none none" },
     });
+    timeline
+      .from(caption, { opacity: 0, y: 30, duration: 0.6 })
+      .from(heading, { opacity: 0, y: 30, duration: 0.6 }, "<")
+      .from(cards, { opacity: 0, y: 24, duration: 0.5, stagger: 0.12 });
+    return () => timeline.kill();
+  }, { scope: platformRef });
 
-    tl.from( caption, {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-    })
-    .from(heading, {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-    })
-    .from(subDetailBox, {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        stagger: 0.2
-    });
-
-}, { scope: platformRef });
+  const settings = {
+    dots: false, infinite: true, centerMode: true, centerPadding: "24px", slidesToShow: 3, slidesToScroll: 1,
+    autoplay: true, speed: 6000, autoplaySpeed: 2000, pauseOnHover: true, cssEase: "linear", arrows: false,
+    responsive: [
+      { breakpoint: 1280, settings: { slidesToShow: 2, centerPadding: "16px" } },
+      { breakpoint: 768, settings: { slidesToShow: 1, centerPadding: "10px" } },
+    ],
+  };
 
   return (
-    <Box ref={platformRef} as="section" id="other-platforms">
-      <Typography variant="caption" className="section_text_p1">Explore My</Typography>
-      <Typography variant="h3" className="section_heading">Other Platforms</Typography>
-      <Box className="details_container">
-        {OTHER_PLATFORMS?.length > 0 && OTHER_PLATFORMS.map((item) => (
-          <Card variant="outlined" className="subdetail_container" key={item?.id}>
-            <Box>
-              {/* Ensure item?.image is an <img> or JSX element */}
-              {typeof item?.image === "string" ? (
-                <img src={item?.image} alt={item?.title} className="platform-image" />
-              ) : (
-                item?.image
-              )}
-              <Typography component="h3" className="text-center">{item?.title}</Typography>
-              <Typography component="p" className="text-center">{item?.description}</Typography>
-          </Box>
-          </Card>
-        ))}
+    <Box ref={platformRef} component="section" id="other-platforms" className="portfolio-section platforms-section">
+      <Typography variant="caption" className="section_text_p1">Beyond the portfolio</Typography>
+      <Typography variant="h3" className="section_heading">Explore My Work</Typography>
+      <Typography component="p" className="platforms-intro">Explore my open-source projects, technical articles, machine learning notebooks, and professional journey across the platforms where I actively build, learn, and share.</Typography>
+
+      <Box className="platforms-carousel">
+        <Slider {...settings}>
+          {OTHER_PLATFORMS.map((item) => {
+            const Icon = platformIcons[item.title];
+            return (
+              <div key={item.id}>
+                <a href={item.link} target="_blank" rel="noopener noreferrer" className="platform-link">
+                  <Card variant="outlined" className="subdetail_container platform-card">
+                    <Box className={`platform-media platform-media--${item.title.toLowerCase()}`} aria-hidden="true"><Icon /></Box>
+                    <Box className="platform-card__content">
+                      <Typography component="h3" className="platform-card__title">{item.title}</Typography>
+                      <Typography component="p" className="platform-card__description">{item.description}</Typography>
+                      <span className="platform-card__action">{item.cta} <FaArrowRight /></span>
+                    </Box>
+                  </Card>
+                </a>
+              </div>
+            );
+          })}
+        </Slider>
       </Box>
     </Box>
   );
 };
 
-export default Projects;
+export default OtherPlatform;
